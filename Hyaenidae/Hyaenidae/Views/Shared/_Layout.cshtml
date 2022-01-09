@@ -1,0 +1,64 @@
+﻿<!--fin-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hyaenidae</title>
+    <link rel="stylesheet" href="~/css/cuon.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav id='hd_nav' class="header row relative shadow_1 flex ch_header center_items justify_center">
+            <div class="flex center_items justify_center justify_center hidden_l">
+                <a class="nav_dir_link" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/static/brand.png" alt="hyaenidae" class="nav_brand" /></a>
+
+                <a class="nav_page_link" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                <a class="nav_page_link" asp-area="" asp-controller="Archive" asp-action="Index">ARCHIVE</a>
+                <a class="nav_page_link" asp-area="" asp-controller="Misc" asp-action="Documents">DOCUMENTS</a>
+                <a class="nav_page_link" asp-area="" asp-controller="Misc" asp-action="About">ABOUT</a>
+                <div class="flex_grow center_items justify_center margin_s">
+                    <input id ="nav_search" type="text" class="hidden_m margin_m margin_m6 nav_text_input" placeholder="SEARCH">
+                    <a class="nav_page_link shown_m" asp-area="" asp-controller="Archive" asp-action="Search">SEARCH</a>
+                </div>
+                <div class="flex_grow center_items justify_center margin_m hidden_s">
+                    <input type="button" class="btn btn_fill"  value="GET STARTED" onclick="tutorial();">
+                </div>
+            </div>
+            <div class="flex center_items justify_center full shown_s">
+                <div class="flex_grow center_items justify_center flex">
+                    <a class="nav_dir_link" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/static/brand.png" alt="hyaenidae" class="nav_brand"></a>
+                </div>
+                <div class="flex center_items">
+                    <svg ct='hd_ham' class="nav_icon nav_menu relative nav_hamburger_menu" viewBox="0 0 1024 1024" width="200" height="200"><path d="M63.97608 127.975696v127.909182h895.454322V127.975696H63.97608z m255.843946 447.727161h639.610376V447.787536H319.820026v127.915321z m0 319.780118h639.610376V767.541047H319.820026v127.941928zM63.97608 575.702857h127.922485V447.787536H63.97608v127.915321z m0 319.780118h127.922485V767.541047H63.97608v127.941928z" fill="#ffffff"></path></svg>
+                </div>
+            </div>
+
+            <div class="nav_menu_container justify_center center_items shadow_2" id='hd_ham' style='display: none;'>
+                <a class="menu_page_link nav_page_link" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                <a class="menu_page_link nav_page_link" asp-area="" asp-controller="Archive" asp-action="Index">ARCHIVE</a>
+                <a class="menu_page_link nav_page_link" asp-area="" asp-controller="Misc" asp-action="Documents">DOCUMENTS</a>
+                <a class="menu_page_link nav_page_link" asp-area="" asp-controller="Misc" asp-action="About">ABOUT</a>
+                <input type="text" id="menu_search" class="menu_textbox" placeholder="SEARCH">
+                <input type="button" class="btn btn_fill menu_btn" value="SEARCH DATASET / MODEL" onclick="menu_search_btn_clicked();">
+            </div>
+            <div class="menu_blank_space" id='hd_ham_blank' style='display:none;'></div>
+        </nav>
+    </header>
+    <div class="body_container relative justify_center flex">
+        <main role="main" class="body_content">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="body_container">
+        <div class="body_content">
+            &copy; 2022 - Hyaenidae
+        </div>
+    </footer>
+    <script src="~/js/cuon_nav.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
