@@ -46,17 +46,23 @@
             <div class="menu_blank_space" id='hd_ham_blank' style='display:none;'></div>
         </nav>
     </header>
-    <div class="body_container relative justify_center flex">
+    <div class="body_container relative justify_center grid grid_2p">
         <main role="main" class="body_content">
             @RenderBody()
         </main>
+        <footer class="mt_2em">
+            <div class="footer_container flex">
+                <a class="nav_dir_link" asp-area="" asp-controller="Misc" asp-action="About">About</a>
+                <a class="nav_dir_link" asp-area="" asp-controller="Misc" asp-action="Contact">Contact</a>
+                <a class="nav_dir_link" asp-area="" asp-controller="Misc" asp-action="Subscribe">Subscribe</a>
+                <a class="nav_dir_link" asp-area="" asp-controller="Misc" asp-action="Support">Support Us</a>
+                <a class="nav_dir_link" asp-area="" asp-controller="Misc" asp-action="Statistics">Statistics Overview</a>
+                <div class="flex_grow"></div>
+                <a class="nav_dir_link" asp-area="" asp-controller="Misc" asp-action="Contact">Constructed by Lupnis</a>
+                <a class="nav_dir_link" asp-area="" asp-controller="Misc" asp-action="Privacy">Privacy Policy</a>
+            </div>
+        </footer>
     </div>
-
-    <footer class="body_container">
-        <div class="body_content">
-            &copy; 2022 - Hyaenidae
-        </div>
-    </footer>
     <script src="~/js/cuon_nav.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
