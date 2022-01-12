@@ -19,7 +19,7 @@
 }
 
 .grid {
-    display: grid;
+    display: grid !important;
 }
 
 .flex_reverse {
@@ -770,5 +770,82 @@ footer {
 }
 
     .footer_container > * {
+        color: #ffffff;
+    }
+
+
+/*archive page*/
+
+.dk_section_container {
+    padding: 1em 0.5em 1.25em 0.5em;
+    min-height: 3em;
+    line-height: 3em;
+    background-color: rgb(206, 214, 226);
+    border-radius: 6px;
+    width: 100%;
+}
+
+.text_box_l {
+    border-radius: 6px !important;
+    border: 2px solid transparent !important;
+    height: 2.5em;
+    margin-right: 0.5em;
+}
+
+.pad_1em {
+    padding: 1em !important;
+}
+
+.pad_2em {
+    padding: 2em !important;
+}
+
+.overflow_hidden {
+    overflow: hidden;
+}
+
+.fixed_size_5em {
+    height: 5em;
+}
+
+.text_box_l:hover,
+.text_box_l:focus,
+.text_box_l:active {
+    border: 2px solid rgb(244, 206, 69) !important;
+}
+
+.category_list li::marker {
+    content: '';
+}
+
+li {
+    margin: 0 1em 0 1em;
+}
+
+.list_li {
+    line-height: 3em;
+}
+
+input[type=checkbox].list_checkbox {
+    display: none;
+}
+
+    input[type=checkbox].list_checkbox + span {
+        display: inline-block;
+        line-height: 1em;
+        border-radius: 6px;
+        padding: 0.5em;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    input[type=checkbox].list_checkbox:hover + span,
+    input[type=checkbox].list_checkbox:focus + span,
+    input[type=checkbox].list_checkbox:active + span {
+        background-color: rgba(0, 0, 0, .2) !important;
+    }
+
+    input[type=checkbox].list_checkbox:checked + span {
+        background-color: rgba(0, 0, 0, .5);
         color: #ffffff;
     }

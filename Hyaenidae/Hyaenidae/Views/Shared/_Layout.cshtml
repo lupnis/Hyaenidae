@@ -19,11 +19,11 @@
                 <a class="nav_page_link" asp-area="" asp-controller="Misc" asp-action="Documents">DOCUMENTS</a>
                 <a class="nav_page_link" asp-area="" asp-controller="Misc" asp-action="About">ABOUT</a>
                 <div class="flex_grow center_items justify_center margin_s">
-                    <input id ="nav_search" type="text" class="hidden_m margin_m margin_m6 nav_text_input" placeholder="SEARCH">
+                    <input id="nav_search" type="text" class="hidden_m margin_m margin_m6 nav_text_input" placeholder="SEARCH">
                     <a class="nav_page_link shown_m" asp-area="" asp-controller="Archive" asp-action="Search">SEARCH</a>
                 </div>
                 <div class="flex_grow center_items justify_center margin_m hidden_s">
-                    <input type="button" class="btn btn_fill"  value="GET STARTED" onclick="tutorial();">
+                    <input type="button" class="btn btn_fill" value="GET STARTED" onclick="tutorial();">
                 </div>
             </div>
             <div class="flex center_items justify_center full shown_s">
@@ -64,6 +64,7 @@
         </footer>
     </div>
     <script src="~/js/cuon_nav.js" asp-append-version="true"></script>
+    <script src="~/js/cuon_collapse.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

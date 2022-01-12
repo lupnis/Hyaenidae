@@ -19,3 +19,8 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+.ch_shgrid {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 2em;
+}
