@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style type="text/css"></style>
+    </defs>
+    <path d="M881 485l-384-261A32 32 0 0 0 448 250v113L241 224A32 32 0 0 0 192 250v522a32 32 0 0 0 49 26L448 659v113a32 32 0 0 0 49 26l384-261a31 31 0 0 0 0-52z"></path>
+</svg>

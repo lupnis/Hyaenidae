@@ -24,3 +24,16 @@ body {
     grid-template-columns: 1fr auto;
     grid-template-rows: 2em;
 }
+
+.ch_rank_item {
+    grid-template-columns: 8em 1fr 10em;
+}
+
+.ch_archive_item {
+    grid-template-columns: 8em 2fr 1fr 10em;
+}
+
+.btn_in_li {
+    margin-top: 0.75em;
+    margin-left: 0.75em;
+}
