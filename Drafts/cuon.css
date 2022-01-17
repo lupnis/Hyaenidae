@@ -728,10 +728,12 @@ input[type=text]:disabled {
     text-decoration: none;
     background-color: rgb(255, 255, 255);
     color: #6e6e6e;
-    transition: all ease-in-out .2s;
     width: 102%;
     margin-left: -1%;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
     z-index: 1;
+    transition: all ease-in-out .2s;
 }
 
 .list_single_item>.list_link:active {
@@ -958,25 +960,34 @@ input[type=checkbox].list_checkbox:checked+span {
 .list_page_navigator>a {
     background-color: #ffffff;
     border: 1px solid #2962ff;
-    width: 3em;
-    height: 3em;
+    width: 2.5em;
+    height: 2.5em;
     padding: 0.5em;
     border-radius: 6px;
     overflow: hidden;
     display: inline-block;
-    border-radius: 6px;
     justify-content: center;
     text-align: center;
-    line-height: 2em;
+    line-height: 1.5em;
     outline: none;
     text-decoration: none;
     font-weight: bold;
+    user-select: none;
+}
+
+.list_page_navigator>a.current_page {
+    background-color: rgb(204, 195, 164);
 }
 
 .list_page_navigator>p {
     font-weight: bold;
-    border: 2px solid #000000;
+    padding: 0.5em;
+    overflow: hidden;
     display: inline-block;
-    line-height: 2em;
-    position: relative;
+    justify-content: center;
+    text-align: center;
+    line-height: 0em;
+    outline: none;
+    text-decoration: none;
+    user-select: none;
 }
