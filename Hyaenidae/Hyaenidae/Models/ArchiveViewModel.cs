@@ -8,5 +8,6 @@ namespace Hyaenidae.Models
     public class ArchiveViewModel
     {
         public int pageID { get; set; }
+        public int totalPages { get; set; }
     }
 }
