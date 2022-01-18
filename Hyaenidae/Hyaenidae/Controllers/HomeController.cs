@@ -22,7 +22,6 @@ namespace Hyaenidae.Controllers
         public IActionResult Index()
         {
                return View();
-         
         }
 
        
