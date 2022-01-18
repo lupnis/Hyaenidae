@@ -18,10 +18,11 @@ namespace Hyaenidae.Controllers
         {
             _logger = logger;
         }
-
+        public string pageID;
         public IActionResult Index()
         {
-            return View();
+               return View();
+         
         }
 
        

@@ -14,7 +14,7 @@ namespace Hyaenidae.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new ArchiveViewModel { pageID= int.Parse(HttpContext.Request.Query["page"].FirstOrDefault()==null?"1": HttpContext.Request.Query["page"].FirstOrDefault()) });
         }
         public IActionResult Search()
         {

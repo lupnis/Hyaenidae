@@ -1,7 +1,28 @@
-﻿@*
+﻿@model ArchiveViewModel 
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
 <div id="sec_flag" class="sec_flag" sec="1"></div>
-archive page contains a list contains all datasets and models, and thier request ids
+
+<div class="list_container mt_2em">
+    <p class="list_header">Archive type @@A</p>
+    <div class="table_head ch_archive_item">
+        <p>Cate ID</p>
+        <p>Name</p>
+        <p>RequestID</p>
+        <p>Details</p>
+    </div>
+    <div>
+        <div class="list_single_item ch_archive_item">
+            <p>@@rank</p>
+            <p>@@name</p>
+            <a class="list_link copy_paste_section">@@click to copy</a>
+            <input type="button" class="btn btn_fill btn_in_li" value="DETAILS" href="#">
+        </div>
+
+    </div>
+</div>
+<div class="list_container mt_2em flex list_page_navigator" c="@Model.pageID" f="1" t="100" p2h="p2head.svg" p2u="p2up.svg" p2d="p2down.svg" p2e="p2end.svg" href_prefix="/Archive">
+</div>
