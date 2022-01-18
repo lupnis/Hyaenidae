@@ -43,17 +43,40 @@
             list_page_navigators[i].innerHTML = '';
 
             list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a href=\"" + href_prefix + from.toString() + "\"><img src=\"" + a2h + "\" alt=\"F\"></a>");
-            list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a href=\"" + href_prefix + Math.max(from, curr - 1).toString() + "\"><img src=\"" + a2u + "\" alt=\"F\"></a>");
+            list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a href=\"" + href_prefix + Math.max(from, curr - 1).toString() + "\"><img src=\"" + a2u + "\" alt=\"U\"></a>");
 
+            for (var j = from; j <= Math.min(topg, curr - 2, from + 2); j++) {
+                if (curr == j) {
+                    list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a class=\"current_page\" href=\"" + href_prefix + j.toString() + "\">" + j.toString() + "</a>");
+                } else {
+                    list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a href=\"" + href_prefix + j.toString() + "\">" + j.toString() + "</a>");
+                }
+            }
+            if (curr - from >= 5) {
+                list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<p>...</p>");
+            }
 
+            for (var j = Math.max(curr - 1, from); j <= Math.min(curr + 1, topg); j++) {
+                if (curr == j) {
+                    list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a class=\"current_page\" href=\"" + href_prefix + j.toString() + "\">" + j.toString() + "</a>");
+                } else {
+                    list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a href=\"" + href_prefix + j.toString() + "\">" + j.toString() + "</a>");
+                }
+            }
+            if (curr <= topg - 5) {
+                list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<p>...</p>");
+            }
 
+            for (var j = Math.max(from, curr + 2, topg - 2); j <= topg; j++) {
+                if (curr == j) {
+                    list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a class=\"current_page\" href=\"" + href_prefix + j.toString() + "\">" + j.toString() + "</a>");
+                } else {
+                    list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a href=\"" + href_prefix + j.toString() + "\">" + j.toString() + "</a>");
+                }
+            }
 
-
-
-
-
-            list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a href=\"" + href_prefix + Math.min(topg, curr + 1).toString() + "\"><img src=\"" + a2d + "\" alt=\"F\"></a>");
-            list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a href=\"" + href_prefix + topg.toString() + "\"><img src=\"" + a2e + "\" alt=\"F\"></a>");
+            list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a href=\"" + href_prefix + Math.min(topg, curr + 1).toString() + "\"><img src=\"" + a2d + "\" alt=\"D\"></a>");
+            list_page_navigators[i].insertAdjacentHTML("beforeEnd", "<a href=\"" + href_prefix + topg.toString() + "\"><img src=\"" + a2e + "\" alt=\"L\"></a>");
         }
     } catch (e) { console.log(e); }
 })();

@@ -963,6 +963,8 @@ input[type=checkbox].list_checkbox:checked+span {
     width: 2.5em;
     height: 2.5em;
     padding: 0.5em;
+    padding-left: 0;
+    padding-right: 0;
     border-radius: 6px;
     overflow: hidden;
     display: inline-block;
@@ -975,18 +977,22 @@ input[type=checkbox].list_checkbox:checked+span {
     user-select: none;
 }
 
+.list_page_navigator>a>img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
 .list_page_navigator>a.current_page {
     background-color: rgb(204, 195, 164);
 }
 
 .list_page_navigator>p {
     font-weight: bold;
-    padding: 0.5em;
     overflow: hidden;
     display: inline-block;
     justify-content: center;
     text-align: center;
-    line-height: 0em;
+    line-height: 0.5em;
     outline: none;
     text-decoration: none;
     user-select: none;
