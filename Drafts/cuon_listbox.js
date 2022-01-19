@@ -21,7 +21,7 @@
             copy_paste_sections[i].onclick = function() {
                 var clipboardContent = this.innerText;
                 navigator.clipboard.writeText(clipboardContent);
-                alert('RequestID copied.');
+                alert('Content copied.');
             }
         }
     } catch {}
