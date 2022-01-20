@@ -225,7 +225,7 @@ html {
 .btn_nofill {
     background-color: transparent;
     border-color: rgb(80, 48, 33);
-    color: #ffffff;
+    color: #414119;
 }
 
 .btn_nofill:hover,
@@ -751,7 +751,10 @@ input[type=text]:disabled {
     display: inline;
 }
 
-.plain_text_section>h1 {
+.plain_text_section>h1,
+.plain_text_section>h2,
+.plain_text_section>h3,
+.plain_text_section>h4 {
     text-align: center;
 }
 
