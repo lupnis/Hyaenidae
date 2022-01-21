@@ -2,19 +2,33 @@
     try {
         var list_box_items = document.getElementsByClassName('gallery_box_container');
         for (var i = 0; i < list_box_items.length; i++) {
-            list_box_items[i].getElementsByTagName('h3')[0].onclick = list_box_items[i].getElementsByTagName('p')[0].onclick = list_box_items[i].getElementsByTagName('input')[0].onclick = function(e) {
-                window.location = this.parentElement.getAttribute('href');
+            for (var j = 0; j < list_box_items[i].getElementsByTagName('h3').length; j++) {
+                list_box_items[i].getElementsByTagName('h3')[j].addEventListener('click', function() {
+                    try { window.location = this.parentElement.getAttribute('href'); } catch {}
+                });
+            }
+            for (var j = 0; j < list_box_items[i].getElementsByTagName('p').length; j++) {
+                list_box_items[i].getElementsByTagName('p')[0].addEventListener('click', function() {
+                    try { window.location = this.parentElement.getAttribute('href'); } catch {}
+                });
+            }
+            for (var j = 0; j < list_box_items[i].getElementsByTagName('input').length; j++) {
+                list_box_items[i].getElementsByTagName('input')[0].addEventListener('click', function() {
+                    try { window.location = this.parentElement.getAttribute('href'); } catch {}
+                });
             }
         }
     } catch {}
+
     try {
         var btn_in_lis = document.getElementsByClassName('btn_in_li');
         for (var i = 0; i < btn_in_lis.length; i++) {
             btn_in_lis[i].onclick = function() {
-                window.location = this.getAttribute('href');
+                try { window.location = this.getAttribute('href'); } catch {}
             }
         }
     } catch {}
+
     try {
         var copy_paste_sections = document.getElementsByClassName('copy_paste_section');
         for (var i = 0; i < copy_paste_sections.length; i++) {
@@ -25,6 +39,7 @@
             }
         }
     } catch {}
+
     try {
         var list_page_navigators = document.getElementsByClassName('list_page_navigator');
         for (var i = 0; i < list_page_navigators.length; i++) {
