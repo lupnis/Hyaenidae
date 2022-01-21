@@ -9,11 +9,10 @@
 
 <body>
     <header>
-        <!--未登录
         <nav id='hd_nav' class="header row relative shadow_1 flex ch_header center_items justify_center">
             <div class="flex center_items justify_center justify_center hidden_l">
                 <img src="" alt="hyaenidae" class="nav_brand">
-                <a href="" class="nav_page_link nav_active">HOME</a>
+                <a href="" class="nav_page_link">HOME</a>
                 <a href="" class="nav_page_link">ARCHIVE</a>
                 <a href="" class="nav_page_link">DOCUMENTS</a>
                 <a href="" class="nav_page_link">ABOUT</a>
@@ -54,7 +53,7 @@
                 </div>
             </div>
             <div class="menu_blank_space" id='hd_ham_blank' style='display:none;'></div>
-        </nav>-->
+        </nav>
 
         <nav id='hd_nav' class="header row relative shadow_1 flex ch_header center_items justify_center">
             <div class="flex center_items justify_center justify_center hidden_l">
@@ -82,7 +81,7 @@
                 </div>
                 <div class="flex center_items">
                     <svg ct='hd_ham' class="nav_icon nav_menu relative nav_hamburger_menu" class="icon" viewBox="0 0 1024 1024" width="200" height="200">
-                        <path d="M63.97608 127.975696v127.909182h895.454322V127.975696H63.97608z m255.843946 447.727161h639.610376V447.787536H319.820026v127.915321z m0 319.780118h639.610376V767.541047H319.820026v127.941928zM63.97608 575.702857h127.922485V447.787536H63.97608v127.915321z m0 319.780118h127.922485V767.541047H63.97608v127.941928z" fill="#ffffff"></path>
+                        <path d="M64 128v128h895V128H64z m256 448h640V448H320v128z m0 320h640V768H320v128zM64 576h128V448H64v128z m0 320h128V768H64v128z" fill="#ffffff"></path>
                     </svg>
                     <img src="user_default.png" alt="" class="nav_icon nav_menu relative user_icon">
                 </div>
@@ -105,33 +104,6 @@
 
     <div class="body_container relative  center_items flex flex_column">
         <main role="main" class="body_content mb_2em">
-            <input type="button" href="" class="btn btn_nofill history_back_btn" value="- BACK -">
-            <div class="plain_text_section mt_2em mb_2em">
-                <h1>@@namelist[@@did]</h1>
-                <h4>DATE: @@pubdate | AUTHOR: @@pubauthor | STATISTICS: UNAVAILABLE</h4>
-            </div>
-            <div class="plain_text_section mt_2em mb_2em">
-                <h2>Desc.</h2>
-                @@Ddescription
-            </div>
-            <div class="plain_text_section mt_2em mb_2em">
-                <h2>Tags.</h2>
-                @@DTags
-            </div>
-            <div class="plain_text_section mt_2em mb_2em">
-                <h2>Inst.</h2>
-                <p>@@DInst</p>
-                <p>Download to your local devices:</p>
-
-            </div>
-            <div class="plain_text_section mt_2em mb_2em">
-                <h2>Refs.</h2>
-                @@Dref
-            </div>
-            <div class="plain_text_section mt_2em mb_2em">
-                <h2>More.</h2>
-                @@DMore
-            </div>
         </main>
         <footer class="mt_2em">
             <div class="footer_container flex relative ">
