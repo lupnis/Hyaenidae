@@ -1,16 +1,16 @@
-﻿(function () {
-    document.getElementById('nav_search').onkeypress= function (e) {
-        if (e.keyCode == 13) {
+﻿(function() {
+    document.getElementById('nav_search').addEventListener('keypress', function(e) {
+        if (e.code == 13) {
             if (document.getElementById('nav_search').value == '' || document.getElementById('nav_search').value == null) return;
             window.location = '/Archive/Search/?kw=' + document.getElementById('nav_search').value;
         }
-    }
-    document.getElementById('menu_search').onkeypress = function (e) {
-        if (e.keyCode == 13) {
+    });
+    document.getElementById('menu_search').addEventListener('keypress', function(e) {
+        if (e.code == 13) {
             if (document.getElementById('menu_search').value == '' || document.getElementById('menu_search').value == null) return;
             window.location = '/Archive/Search/?kw=' + document.getElementById('menu_search').value;
         }
-    }
+    });
 })();
 
 function tutorial() {
