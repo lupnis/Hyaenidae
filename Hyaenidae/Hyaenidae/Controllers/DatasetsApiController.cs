@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text;
 using System.Text.Json;
-
 using Hyaenidae.Misc;
 
 namespace Hyaenidae.Controllers
@@ -14,37 +13,49 @@ namespace Hyaenidae.Controllers
     [ApiController]
     public class DatasetsApiController : ControllerBase
     {
-        private class TestMessage
+        private class TextMessage
         {
             public string Name => GlobalData.Name;
             public string SubName => GlobalData.SubName;
             public string Version => GlobalData.Version;
             public GlobalData.ServerStatus Status => GlobalData.Status;
             public double UpTime => Math.Round((DateTime.Now - GlobalData.Activated).TotalMinutes);
+            public string Message { get; set; }
         }
-       /* [HttpGet]
-        [Route("/Api/Switch")]
-        public string Down()
+        private class PlainTextMessage
         {
-            GlobalServerOperation.SetServerStatus(GlobalData.ServerStatus.Down);
-            return "ok";
-        }*/
+            public string Name => GlobalData.Name;
+            public string SubName => GlobalData.SubName;
+            public string Version => GlobalData.Version;
+            public string Message { get; set; }
+        }
+        private class ImageMessage
+        {
+            public string Name => GlobalData.Name;
+            public string SubName => GlobalData.SubName;
+            public string Version => GlobalData.Version;
+            public GlobalData.ServerStatus Status => GlobalData.Status;
+            public double UpTime => Math.Round((DateTime.Now - GlobalData.Activated).TotalMinutes);
+            public string Notes { get; set; }
+            //
+        }
         [HttpGet]
         [Route("/Api")]
         [Route("/Api/Test")]
         public string Test()
         {
-            return JsonSerializer.Serialize(new TestMessage());
+            return JsonSerializer.Serialize(new TextMessage { Message="Done."});
         }
+
         [HttpGet]
         [Route("/Api/Hyaenidae")]
         public string Hello()
         {
-            return "Hello, this is Hyaenidae at service!";
+            return JsonSerializer.Serialize(new TextMessage { Message = "Hello, this is little Aenidae at service!" });
         }
         [HttpGet]
         [Route("/Api/RemainDatasetIDRequests")]
-        public long CountRequested()
+        public int CountRequested()
         {
             return 0x3f3f3f3f;
         }
