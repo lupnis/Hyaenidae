@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text;
 using System.Text.Json;
+using System.Drawing;
 using Hyaenidae.Misc;
 
 namespace Hyaenidae.Controllers
@@ -20,24 +21,31 @@ namespace Hyaenidae.Controllers
             public string Version => GlobalData.Version;
             public GlobalData.ServerStatus Status => GlobalData.Status;
             public double UpTime => Math.Round((DateTime.Now - GlobalData.Activated).TotalMinutes);
-            public string Message { get; set; }
+            public String Message { get; set; }
         }
         private class PlainTextMessage
         {
             public string Name => GlobalData.Name;
             public string SubName => GlobalData.SubName;
             public string Version => GlobalData.Version;
-            public string Message { get; set; }
+            public string Notes { get; set; }
+            public String Message { get; set; }
         }
         private class ImageMessage
         {
             public string Name => GlobalData.Name;
             public string SubName => GlobalData.SubName;
             public string Version => GlobalData.Version;
-            public GlobalData.ServerStatus Status => GlobalData.Status;
-            public double UpTime => Math.Round((DateTime.Now - GlobalData.Activated).TotalMinutes);
             public string Notes { get; set; }
-            //
+            public Image Message { get; set; }
+        }
+        private class BinaryMessage
+        {
+            public string Name => GlobalData.Name;
+            public string SubName => GlobalData.SubName;
+            public string Version => GlobalData.Version;
+            public string Notes { get; set; }
+            public Byte[] Bytes { get; set; }
         }
         [HttpGet]
         [Route("/Api")]
