@@ -53,7 +53,15 @@ namespace Hyaenidae.Controllers
             public string SubName => GlobalData.SubName;
             public string Version => GlobalData.Version;
             public string Notes { get; set; }
-            public List<List<Object>> Message { get; set; }
+            public JsonDocument Message { get; set; }
+        }
+        private class NumpyMessage
+        {
+            public string Name => GlobalData.Name;
+            public string SubName => GlobalData.SubName;
+            public string Version => GlobalData.Version;
+            public string Notes { get; set; }
+            public JsonDocument Message { get; set; }
         }
 
         [HttpGet]
