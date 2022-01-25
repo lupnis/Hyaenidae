@@ -7,7 +7,8 @@ namespace Hyaenidae.Models
 {
     public class ArchiveViewModel
     {
-        public int pageID { get; set; }
-        public int totalPages { get; set; }
+        public int PageID { get; set; }
+        public int TotalPages { get; set; }
+        public int currentPage { get; set; }
     }
 }

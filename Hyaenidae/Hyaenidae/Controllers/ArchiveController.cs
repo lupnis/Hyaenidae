@@ -1,5 +1,4 @@
-﻿/*under sonstricution*/
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ namespace Hyaenidae.Controllers
     {
         public IActionResult Index()
         {
-            return View(new ArchiveViewModel { pageID = 1 ,totalPages=1 }) ;
+            return View(new ArchiveViewModel { PageID = 1 ,TotalPages=1 ,currentPage=1}) ;
         }
         public IActionResult Search()
         {
