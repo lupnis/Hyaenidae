@@ -90,6 +90,27 @@ namespace Hyaenidae.Controllers
         public string OLAC_DatasetAccess_General(string reqid, ulong didx)
         {
             return JsonSerializer.Serialize(new TextMessage { Message = "reqid=" + reqid + ", didx=" + didx });
+            //TODO:
+        }
+        public string OLAC_DatasetAccess_Trans2Binary(string reqid, ulong didx)
+        {
+            return JsonSerializer.Serialize(new TextMessage { Message = "[BIN]reqid=" + reqid + ", didx=" + didx });
+            //TODO:
+        }
+        public string OLAC_DatasetAccess_Trans2Tensor(string reqid, ulong didx)
+        {
+            return JsonSerializer.Serialize(new TextMessage { Message = "[Tensor]reqid=" + reqid + ", didx=" + didx });
+            //TODO:
+        }
+        public string OLAC_DatasetAccess_Trans2Numpy(string reqid, ulong didx)
+        {
+            return JsonSerializer.Serialize(new TextMessage { Message = "[Numpy]reqid=" + reqid + ", didx=" + didx });
+            //TODO:
+        }
+        public string OLAC_DatasetAccess_Trans2Image(string reqid, ulong didx)
+        {
+            return JsonSerializer.Serialize(new TextMessage { Message = "[Image]reqid=" + reqid + ", didx=" + didx });
+            //TODO:
         }
 
     }
