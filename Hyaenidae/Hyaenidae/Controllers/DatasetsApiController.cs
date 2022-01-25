@@ -69,7 +69,7 @@ namespace Hyaenidae.Controllers
         [Route("/Api/Test")]
         public string Test()
         {
-            return JsonSerializer.Serialize(new TextMessage { Message="Done."});
+            return JsonSerializer.Serialize(new TextMessage { Message = "Done." });
         }
 
         [HttpGet]
@@ -80,9 +80,17 @@ namespace Hyaenidae.Controllers
         }
         [HttpGet]
         [Route("/Api/RemainDatasetIDRequests")]
-        public int CountRequested()
+        public int CountRequested()// temporarily unavailable
         {
             return 0x3f3f3f3f;
         }
+        [HttpGet]
+        [Route("/Api/OLAC/Dataset/{reqid}/{didx}")]//online access
+        [Route("/Api/OLAC/Datasets/{reqid}/{didx}")]
+        public string OLAC_DatasetAccess_General(string reqid, ulong didx)
+        {
+            return JsonSerializer.Serialize(new TextMessage { Message = "reqid=" + reqid + ", didx=" + didx });
+        }
+
     }
 }
