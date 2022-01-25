@@ -84,6 +84,17 @@ namespace Hyaenidae.Controllers
         {
             return 0x3f3f3f3f;
         }
+
+
+        [HttpGet]
+        [Route("/Api/OLAC/Dataset/{reqid}")]//online access dataset details
+        [Route("/Api/OLAC/Datasets/{reqid}")]
+        public string OLAC_Dataset_Intr(string reqid)
+        {
+            return JsonSerializer.Serialize(new TextMessage { Message = "Intr:reqid=" + reqid });
+            //TODO:
+        }
+
         [HttpGet]
         [Route("/Api/OLAC/Dataset/{reqid}/{didx}")]//online access
         [Route("/Api/OLAC/Datasets/{reqid}/{didx}")]
