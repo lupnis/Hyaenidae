@@ -100,7 +100,17 @@ namespace Hyaenidae.Controllers
         [Route("/Api/OLAC/Datasets/{reqid}/{didx}")]
         public string OLAC_DatasetAccess_General(string reqid, ulong didx)
         {
-
+            switch (reqid[0])
+            {
+                case 'B':
+                    return OLAC_DatasetAccess_Trans2Binary(reqid, didx);
+                case 'T':
+                    return OLAC_DatasetAccess_Trans2Tensor(reqid, didx);
+                case 'N':
+                    return OLAC_DatasetAccess_Trans2Numpy(reqid, didx);
+                case 'I':
+                    return OLAC_DatasetAccess_Trans2Image(reqid, didx);
+            }
             return JsonSerializer.Serialize(new TextMessage { Message = "reqid=" + reqid + ", didx=" + didx });
             //TODO:
         }
