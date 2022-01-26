@@ -14,6 +14,8 @@ namespace Hyaenidae.Controllers
     [ApiController]
     public class DatasetsApiController : ControllerBase
     {
+
+        #region Message Classes
         private class TextMessage
         {
             public string Name => GlobalData.Name;
@@ -63,7 +65,9 @@ namespace Hyaenidae.Controllers
             public string Notes { get; set; }
             public JsonDocument Message { get; set; }
         }
+        #endregion
 
+        #region API interfaces for test activities and normal information access
         [HttpGet]
         [Route("/Api")]
         [Route("/Api/Test")]
@@ -84,9 +88,10 @@ namespace Hyaenidae.Controllers
         {
             return 0x3f3f3f3f;
         }
+        #endregion
 
 
-        [HttpGet]
+        /*[HttpGet]
         [Route("/Api/OLAC/Dataset/{reqid}")]//online access dataset details
         [Route("/Api/OLAC/Datasets/{reqid}")]
         public string OLAC_Dataset_Intr(string reqid)
@@ -133,7 +138,7 @@ namespace Hyaenidae.Controllers
         {
             return JsonSerializer.Serialize(new TextMessage { Message = "[Image]reqid=" + reqid + ", didx=" + didx });
             //TODO:
-        }
+        }*/
 
     }
 }
