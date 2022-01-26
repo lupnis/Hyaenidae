@@ -86,7 +86,7 @@ namespace Hyaenidae.Controllers
         [Route("/Api/RemainDatasetIDRequests")]
         public int CountRequested()// temporarily unavailable
         {
-            return 0x3f3f3f3f;
+            return 99999;
         }
         #endregion
 
