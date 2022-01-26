@@ -1,4 +1,5 @@
-﻿namespace Hyaenidae.Misc
+﻿using System;
+namespace Hyaenidae.Misc
 {
     public class DatasourceOperation
     {
