@@ -67,7 +67,7 @@ namespace Hyaenidae.Controllers
         }
         #endregion
 
-        #region API interfaces for test activities and normal information access
+        #region API interfaces for test and normal information access
         [HttpGet]
         [Route("/Api")]
         [Route("/Api/Test")]
