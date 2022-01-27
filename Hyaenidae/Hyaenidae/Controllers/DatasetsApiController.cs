@@ -65,6 +65,22 @@ namespace Hyaenidae.Controllers
             public string Notes { get; set; }
             public JsonDocument Message { get; set; }
         }
+        private class DictionaryMessage
+        {
+            public string Name => GlobalData.Name;
+            public string SubName => GlobalData.SubName;
+            public string Version => GlobalData.Version;
+            public string Notes { get; set; }
+            public Dictionary<Object,Object> Message { get; set; }
+        }
+        private class ListMessage
+        {
+            public string Name => GlobalData.Name;
+            public string SubName => GlobalData.SubName;
+            public string Version => GlobalData.Version;
+            public string Notes { get; set; }
+            public List<Object> Message { get; set; }
+        }
         #endregion
 
         #region API interfaces for test and normal information access
@@ -144,6 +160,10 @@ namespace Hyaenidae.Controllers
         public string OLAC_DatasetAccess_Trans2Dictionary(string reqid, ulong didx)
         {
             return JsonSerializer.Serialize(new TextMessage { Message = "[Dictionary]reqid=" + reqid + ", didx=" + didx });
+        }
+        public string OLAC_DatasetAccess_Trans2List(string reqid, ulong didx)
+        {
+            return JsonSerializer.Serialize(new TextMessage { Message = "[List]reqid=" + reqid + ", didx=" + didx });
         }
         /**/
 
