@@ -91,7 +91,7 @@ namespace Hyaenidae.Controllers
         #endregion
 
 
-        /*[HttpGet]
+        [HttpGet]
         [Route("/Api/OLAC/Dataset/{reqid}")]//online access dataset details
         [Route("/Api/OLAC/Datasets/{reqid}")]
         public string OLAC_Dataset_Intr(string reqid)
@@ -115,6 +115,8 @@ namespace Hyaenidae.Controllers
                     return OLAC_DatasetAccess_Trans2Numpy(reqid, didx);
                 case 'I':
                     return OLAC_DatasetAccess_Trans2Image(reqid, didx);
+                case 'D':
+                    return OLAC_DatasetAccess_Trans2Dictionary(reqid, didx);
             }
             return JsonSerializer.Serialize(new TextMessage { Message = "reqid=" + reqid + ", didx=" + didx });
             //TODO:
@@ -138,7 +140,12 @@ namespace Hyaenidae.Controllers
         {
             return JsonSerializer.Serialize(new TextMessage { Message = "[Image]reqid=" + reqid + ", didx=" + didx });
             //TODO:
-        }*/
+        }
+        public string OLAC_DatasetAccess_Trans2Dictionary(string reqid, ulong didx)
+        {
+            return JsonSerializer.Serialize(new TextMessage { Message = "[Dictionary]reqid=" + reqid + ", didx=" + didx });
+        }
+        /**/
 
     }
 }
