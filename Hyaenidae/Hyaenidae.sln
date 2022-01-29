@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31624.102
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyaenidae", "Hyaenidae\Hyaenidae.csproj", "{78408A6B-E498-453E-A6B8-F65805990D14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyaenidae", "Hyaenidae\Hyaenidae.csproj", "{78408A6B-E498-453E-A6B8-F65805990D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storenidae", "Storenidae\Storenidae.csproj", "{3FE87934-6102-4B53-8B31-1C0227F8B703}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{78408A6B-E498-453E-A6B8-F65805990D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78408A6B-E498-453E-A6B8-F65805990D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78408A6B-E498-453E-A6B8-F65805990D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FE87934-6102-4B53-8B31-1C0227F8B703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE87934-6102-4B53-8B31-1C0227F8B703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE87934-6102-4B53-8B31-1C0227F8B703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE87934-6102-4B53-8B31-1C0227F8B703}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,5 +14,8 @@ namespace Hyaenidae.Misc
         public const string Version = "0.0.0";
         public static ServerStatus Status = ServerStatus.Up;
         public static DateTime Activated = DateTime.Now;
+
+        protected const string MySQLConnectionString = ""; 
+        protected const string RedisConnectionString = "127.0.0.1:6379";
     }
 }
