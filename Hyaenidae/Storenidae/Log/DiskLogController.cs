@@ -8,5 +8,9 @@ namespace Storenidae.Log
 {
     internal class DiskLogController
     {
+        public void AppendLog(string _content)
+        {
+
+        }
     }
 }
