@@ -31,41 +31,35 @@ namespace Storenidae.Log
                 case LogLevel.NOTICE:
                     Console.BackgroundColor = ConsoleColor.DarkBlue;
                     Console.Write("NOTICE");
-                    Console.BackgroundColor = ConsoleColor.Black;
                     break;
                 case LogLevel.DEBUG:
                     Console.BackgroundColor = ConsoleColor.DarkGray;
                     Console.Write("DEBUG");
-                    Console.BackgroundColor = ConsoleColor.Black;
                     break;
                 case LogLevel.WARN:
                     Console.BackgroundColor = ConsoleColor.DarkYellow;
                     Console.Write("WARN");
-                    Console.BackgroundColor = ConsoleColor.Black;
                     break;
                 case LogLevel.ERROR:
                     Console.BackgroundColor = ConsoleColor.DarkRed;
                     Console.Write("ERROR");
-                    Console.BackgroundColor = ConsoleColor.Black;
                     break;
                 case LogLevel.FATAL:
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.Write("FATAL");
-                    Console.BackgroundColor = ConsoleColor.Black;
                     break;
                 case LogLevel.SUCCESS:
                     Console.BackgroundColor = ConsoleColor.DarkGreen;
                     Console.Write("SUCCESS");
-                    Console.BackgroundColor = ConsoleColor.Black;
                     break;
                 case LogLevel.FAILED:
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.Write("FAILED");
-                    Console.BackgroundColor = ConsoleColor.Black;
                     break;
                 default:
                     break;
             }
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.WriteLine(" " + _format, _args);
         }
         static void Print(LogLevel _level, string _format)
