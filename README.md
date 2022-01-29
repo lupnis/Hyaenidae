@@ -6,5 +6,7 @@ You can also have easy online-access to datasets and models by using interfaces 
 
 此项目计划通过webAPI和本地的程序等来实现对数据集和模型的在线访问。
 
-代码在做，这个项目应该不会咕咕
-最近在试着用git来更新XD
+开发进度：
+ + 2022-01-09 第一次提交主要部分"Hyaenidae"
+ + 2022-01-21 完成交互界面设计
+ + 2022-01-29 创建存储通讯部分"Storenidae"
