@@ -66,15 +66,54 @@ namespace Storenidae.Log
         {
             Print(_level, _format, null);
         }
-        public static void LogPrint(bool _writelog, DiskLogController _handler, LogLevel _level, string _format, object? _args)
+        static void Print(string _format, object? _args)
+        {
+            Print(LogLevel.UNSET, _format, _args);
+        }
+        static void Print(string _format)
+        {
+            Print(LogLevel.UNSET, _format, null);
+        }
+        public static void LogPrint(bool _writelog, DiskLogController? _handler, LogLevel _level, string _format, object? _args)
         {
             Console.Write("[{0}]", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            string _content = String.Format(@"[{0}][{1}]{2}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), _level.ToString(), String.Format(_format, _args));
+            string _content = String.Format(@"[{0}]{1}{2}",
+                DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                (_level == LogLevel.UNSET ? "" : ("[" + _level.ToString() + "]")),
+                String.Format(_format, _args));
             Print(_level, _format, _args);
-            if (_writelog)
+            if (_handler != null && _writelog)
             {
                 _handler.AppendLog(_content);
             }
+        }
+        public static void LogPrint(bool _writelog, DiskLogController? _handler, LogLevel _level, string _format)
+        {
+            LogPrint(_writelog, _handler, _level, _format, null);
+        }
+        public static void LogPrint(DiskLogController _handler, LogLevel _level, string _format, object? _args)
+        {
+            LogPrint(true, _handler, _level, _format, _args);
+        }
+        public static void LogPrint(DiskLogController _handler, LogLevel _level, string _format)
+        {
+            LogPrint(true, _handler, _level, _format, null);
+        }
+        public static void LogPrint(LogLevel _level, string _format, object? _args)
+        {
+            LogPrint(false, null, _level, _format, _args);
+        }
+        public static void LogPrint(LogLevel _level, string _format)
+        {
+            LogPrint(false, null, _level, _format, null);
+        }
+        public static void LogPrint(string _format, object? _args)
+        {
+            LogPrint(false, null, LogLevel.UNSET, _format, _args);
+        }
+        public static void LogPrint(string _format)
+        {
+            LogPrint(false, null, LogLevel.UNSET, _format, null);
         }
 #nullable disable
     }
