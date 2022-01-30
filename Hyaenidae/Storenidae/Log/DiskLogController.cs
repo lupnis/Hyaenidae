@@ -8,7 +8,18 @@ namespace Storenidae.Log
 {
     internal class DiskLogController
     {
+        private string logPath;
+
+
         public void AppendLog(string _content)
+        {
+
+        }
+        public void FlushLog()
+        {
+
+        }
+        public void DropLog()
         {
 
         }
