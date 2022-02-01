@@ -17,7 +17,7 @@ namespace Hyaenidae.Controllers
         }
         public IActionResult Search()
         {
-            return View();
+            return View();//
         }
         public IActionResult Details()
         {
