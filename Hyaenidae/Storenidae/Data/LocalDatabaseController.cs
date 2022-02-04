@@ -26,7 +26,7 @@ namespace Storenidae.Data
             }
             catch (Exception ex)
             {
-                LogPrint(GlobalData.globalLogController, LogLevel.FATAL, "Fatal error occurred when attempting to make connection to local database, Error = \x1B[31m{0}\x1B[0m", ex.Message);
+                LogPrint(GlobalData.globalLogController, LogLevel.FATAL, "Fatal error occurred while attempting to make connections to local database, Error = \x1B[31m{0}\x1B[0m", ex.Message);
                 LocalDb.Close();
                 LocalDb = null;
                 GC.Collect();
