@@ -9,6 +9,7 @@ using MySql.Data.MySqlClient;
 using Storenidae.Locale;
 using static Storenidae.Log.ColorLogController;
 
+//i really wanna update it, but im busy learning something:(
 namespace Storenidae.Data
 {
     internal class LocalDatabaseController
