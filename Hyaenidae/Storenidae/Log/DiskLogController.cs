@@ -59,7 +59,7 @@ namespace Storenidae.Log
                 if (!File.Exists(fullPath))
                 {
                     File.Create(fullPath, 128, FileOptions.Asynchronous).Close();
-                    LogPrint(this,LogLevel.SUCCESS, "Log file: \x1B[32m {0} \x1B[0m created.", fullPath);
+                    LogPrint(this, LogLevel.SUCCESS, "Log file: \x1B[32m {0} \x1B[0m created.", fullPath);
                 }
                 if (logs.Count > 0)
                 {
@@ -70,7 +70,7 @@ namespace Storenidae.Log
             {
                 LogPrint(LogLevel.FAILED, "Errors occurred while flushing log file:\x1B[31m {0} \x1B[0m, Error=\x1B[31m {1} \x1B[0m", fullPath, ex.Message);
             }
-            LogPrint(this,LogLevel.INFO, "Cached logs flushed.");
+            LogPrint(this, LogLevel.INFO, "Cached logs flushed.");
             logs.Clear();
         }
         public void DropLog()// only drop cached data hasn't been stored on disk
