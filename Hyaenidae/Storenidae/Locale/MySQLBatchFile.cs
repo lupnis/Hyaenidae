@@ -41,12 +41,17 @@ CREATE TABLE IF NOT EXISTS `db_hyaenidae_sto`.`table_catelist` (
 PRIMARY KEY (`cid`),
 UNIQUE INDEX `cid_UNIQUE` (`cid` ASC) VISIBLE);
 
-CREATE TABLE IF NOT EXISTS `db_hyaenidae`.`table_datasets` (
+CREATE TABLE IF NOT EXISTS `db_hyaenidae_sto`.`table_datasets` (
 `dreqid` VARCHAR(65) NOT NULL COMMENT 'dataset request id',
 `dtitle` TEXT NOT NULL COMMENT 'dataset title',
-`d`
-);
-
+`ddescription` TEXT NOT NULL COMMENT 'dataset descriptions',
+`dfulldesc` LONGTEXT NULL COMMENT 'full description of the dataset in markdown format',
+`dhref` TEXT NULL COMMENT 'dataset detail page',
+`ddownloadpath` TEXT NULL COMMENT 'offline access to the dataset',
+`dtags` JSON NULL COMMENT 'tags',
+`dcates` JSON NULL COMMENT 'categories of dataset',
+PRIMARY KEY (`dreqid`),
+UNIQUE INDEX `dreqid_UNIQUE` (`dreqid` ASC) VISIBLE);
 ";
 
         public const string databaseContnetEnv = @"
