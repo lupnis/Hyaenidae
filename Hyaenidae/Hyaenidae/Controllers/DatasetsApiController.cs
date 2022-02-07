@@ -115,7 +115,7 @@ namespace Hyaenidae.Controllers
             return JsonSerializer.Serialize(new TextMessage { Message = "Intr:reqid=" + reqid });
             //TODO:
         }
-
+        /*
         [HttpGet]
         [Route("/Api/OLAC/Dataset/{reqid}/{didx}")]//online access
         [Route("/Api/OLAC/Datasets/{reqid}/{didx}")]

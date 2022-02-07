@@ -70,7 +70,7 @@ namespace Storenidae.Data
             }
             catch (Exception ex)
             {
-                LogPrint(GlobalData.globalLogController, LogLevel.FATAL, "Fatal error occurred while attempting to build database, Error = \x1B[31m{0}\x1B[0m", ex.Message);
+                LogPrint(GlobalData.globalLogController, LogLevel.FATAL, "Fatal error occurred while attempting to initialize database, Error = \x1B[31m{0}\x1B[0m", ex.Message);
             }
         }
     }
