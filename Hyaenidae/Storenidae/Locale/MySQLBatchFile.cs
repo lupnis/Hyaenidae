@@ -35,17 +35,17 @@ UNIQUE INDEX `noid_UNIQUE` (`noid` ASC) VISIBLE);
 
 CREATE TABLE IF NOT EXISTS `db_hyaenidae_sto`.`table_catelist` (
 `cid` INT NOT NULL COMMENT 'category id',
-`cname` TEXT NOT NULL COMMENT 'name of the category',
-`cfilter` TEXT NULL COMMENT 'the filter this category belongs to',
+`cname` TINYTEXT NOT NULL COMMENT 'name of the category',
+`cfilter` TINYTEXT NULL COMMENT 'the filter this category belongs to',
 `cdesc` TEXT NULL COMMENT 'description of the category, reversed for future versions',
 PRIMARY KEY (`cid`),
 UNIQUE INDEX `cid_UNIQUE` (`cid` ASC) VISIBLE);
 
 CREATE TABLE IF NOT EXISTS `db_hyaenidae_sto`.`table_datasets` (
 `dreqid` VARCHAR(65) NOT NULL COMMENT 'dataset request id',
-`dtitle` TEXT NOT NULL COMMENT 'dataset title',
+`dtitle` TINYTEXT NOT NULL COMMENT 'dataset title',
 `ddescription` TEXT NOT NULL COMMENT 'dataset descriptions',
-`dfulldesc` LONGTEXT NULL COMMENT 'full description of the dataset in markdown format',
+`dfulldesc` MEDIUMTEXT NULL COMMENT 'full description of the dataset in markdown format',
 `dhref` TEXT NULL COMMENT 'dataset detail page',
 `ddownloadpath` TEXT NULL COMMENT 'offline access to the dataset',
 `dtags` JSON NULL COMMENT 'tags',
@@ -55,7 +55,15 @@ UNIQUE INDEX `dreqid_UNIQUE` (`dreqid` ASC) VISIBLE);
 ";
 
         public const string databaseContnetEnv = @"
-create database if not exists `db_hyaenidae_sto_content` DEFAULT CHARACTER SET utf8;
+CREATE DATABASE IF NOT EXISTS `db_hyaenidae_sto_content` DEFAULT CHARACTER SET UTF8MB4;
+
+CREATE TABLE IF NOT EXISTS `db_hyaenidae_sto_content`.`table_datasetloc` (
+`dlreqid` VARCHAR(65) NOT NULL COMMENT 'dataset request id',
+`dlindex` BIGINT NOT NULL COMMENT 'dataset specific content located by index',
+`dlspecpath` TEXT NOT NULL COMMENT 'storage path of spacific data in dataset',
+PRIMARY KEY(`dlreqid`),
+UNIQUE INDEX `dlreqid_UNIQUE` (`dlreqid` ASC) VISIBLE,
+UNIQUE INDEX `dlindex_UNIQUE` (`dlindex` ASC) VISIBLE);
 ";
     }
 }
