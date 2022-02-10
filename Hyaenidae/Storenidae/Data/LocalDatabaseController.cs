@@ -46,10 +46,9 @@ namespace Storenidae.Data
         }
         public void ResetDatabase()
         {
-            MySqlCommand resetCMD = new MySqlCommand("DROP DATABASE `db_hyaenidae_sto`;DROP DATABASE `db_hyaenidae_sto_content`;");
             try
             {
-                resetCMD.ExecuteNonQuery();
+                new MySqlCommand("DROP DATABASE IF EXISTS `db_hyaenidae_sto`;DROP DATABASE IF EXISTS `db_hyaenidae_sto_content`;").ExecuteNonQuery();
                 InitDatabase();
                 LogPrint(GlobalData.globalLogController, LogLevel.NOTICE, "Database has been reset, all stored data dropped.");
             }
@@ -60,12 +59,16 @@ namespace Storenidae.Data
         }
         public void InitDatabase()
         {
-            MySqlCommand rebuildMainDataBaseCMD = new MySqlCommand(MySQLBatchFile.databaseEnv);
-            MySqlCommand rebuildContentDataBaseCMD = new MySqlCommand(MySQLBatchFile.databaseContnetEnv);
+            MySqlCommand rebuildMainDataBaseCMD = new MySqlCommand(MySQLBatchFile.databaseEnv)
+            , rebuildContentDataBaseCMD = new MySqlCommand(MySQLBatchFile.databaseContnetEnv)
+            , rebuildMainDataBaseFUNCCMD = new MySqlCommand(MySQLBatchFile.databaseFunc)
+            , rebuildContentDataBaseFUNCCMD = new MySqlCommand(MySQLBatchFile.databaseContentFunc);
             try
             {
                 rebuildMainDataBaseCMD.ExecuteNonQuery();
                 rebuildContentDataBaseCMD.ExecuteNonQuery();
+                rebuildMainDataBaseFUNCCMD.ExecuteNonQuery();
+                rebuildContentDataBaseFUNCCMD.ExecuteNonQuery();
                 LogPrint(GlobalData.globalLogController, LogLevel.INFO, "Database initialized.");
             }
             catch (Exception ex)

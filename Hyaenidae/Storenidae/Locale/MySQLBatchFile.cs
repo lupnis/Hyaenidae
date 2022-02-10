@@ -65,7 +65,10 @@ PRIMARY KEY(`dlreqid`),
 UNIQUE INDEX `dlreqid_UNIQUE` (`dlreqid` ASC) VISIBLE,
 UNIQUE INDEX `dlindex_UNIQUE` (`dlindex` ASC) VISIBLE);
 ";
-        public const string databaseFunc = @"";
-        public const string databaseContentFunc = @"";
+
+        public const string databaseFunc = @"
+";
+        public const string databaseContentFunc = @"
+";
     }
 }
