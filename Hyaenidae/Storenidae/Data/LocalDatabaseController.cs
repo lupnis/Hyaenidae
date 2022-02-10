@@ -59,16 +59,16 @@ namespace Storenidae.Data
         }
         public void InitDatabase()
         {
-            MySqlCommand rebuildMainDataBaseCMD = new MySqlCommand(MySQLBatchFile.databaseEnv)
-            , rebuildContentDataBaseCMD = new MySqlCommand(MySQLBatchFile.databaseContnetEnv)
-            , rebuildMainDataBaseFUNCCMD = new MySqlCommand(MySQLBatchFile.databaseFunc)
-            , rebuildContentDataBaseFUNCCMD = new MySqlCommand(MySQLBatchFile.databaseContentFunc);
+            MySqlCommand rebuildMainDatabaseCMD = new MySqlCommand(MySQLBatchFile.databaseEnv)
+            , rebuildContentDatabaseCMD = new MySqlCommand(MySQLBatchFile.databaseContnetEnv)
+            , rebuildMainDatabaseFUNCCMD = new MySqlCommand(MySQLBatchFile.databaseFunc)
+            , rebuildContentDatabaseFUNCCMD = new MySqlCommand(MySQLBatchFile.databaseContentFunc);
             try
             {
-                rebuildMainDataBaseCMD.ExecuteNonQuery();
-                rebuildContentDataBaseCMD.ExecuteNonQuery();
-                rebuildMainDataBaseFUNCCMD.ExecuteNonQuery();
-                rebuildContentDataBaseFUNCCMD.ExecuteNonQuery();
+                rebuildMainDatabaseCMD.ExecuteNonQuery();
+                rebuildContentDatabaseCMD.ExecuteNonQuery();
+                rebuildMainDatabaseFUNCCMD.ExecuteNonQuery();
+                rebuildContentDatabaseFUNCCMD.ExecuteNonQuery();
                 LogPrint(GlobalData.globalLogController, LogLevel.INFO, "Database initialized.");
             }
             catch (Exception ex)
