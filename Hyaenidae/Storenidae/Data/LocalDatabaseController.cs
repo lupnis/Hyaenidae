@@ -14,10 +14,11 @@ namespace Storenidae.Data
 {
     internal class LocalDatabaseController
     {
-        private MySqlConnection LocalDb;
-        public LocalDatabaseController(string _connStr)
+        private MySqlConnection LocalDb, localContentDb;
+        public LocalDatabaseController(string _connStr1, string _connStr2)
         {
-            LocalDb = new MySqlConnection(_connStr);
+            LocalDb = new MySqlConnection(_connStr1);
+            localContentDb = new MySqlConnection(_connStr2);
         }
         public void Activate()
         {
