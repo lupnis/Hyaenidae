@@ -1,4 +1,4 @@
-# Hyaenidae 艾尼达尔/厄尼达尔（还没定XD）
+# Hyaenidae system
 
 The hyaenidae platform is an open-source platform for developers and researchers to download datasets and models.
 
