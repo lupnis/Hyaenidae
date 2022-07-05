@@ -10,5 +10,5 @@ You can also have easy online-access to datasets and models by using interfaces 
  + 2022-01-09 第一次提交主要部分"Hyaenidae"
  + 2022-01-21 完成交互界面设计
  + 2022-01-29 创建存储通讯部分"Storenidae"
- + 2022-07-05 更名 API Server of Hyaenidae Online Dataset Service
+ + 2022-07-05 更名 API Server of Hyaenidae Online Dataset and Model Service
  + 2022-07-05 代码开始重构
